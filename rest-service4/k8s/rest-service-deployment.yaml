@@ -3,7 +3,7 @@ kind: Deployment
 metadata:
   name: rest-service
 spec:
-  replicas: 1
+  replicas: 2
   selector:
     matchLabels:
       app: rest-service
@@ -15,5 +15,6 @@ spec:
       containers:
       - name: rest-service
         image: rest-service:latest
+        imagePullPolicy: Never
         ports:
         - containerPort: 8080
